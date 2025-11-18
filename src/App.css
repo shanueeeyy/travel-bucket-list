@@ -1,0 +1,197 @@
+/* === PREMIUM DARK THEME VARIABLES === */
+:root {
+  --bg-deep: #0a0a0a;
+  --bg-card: #161616;
+  --accent-gold: #d4af37;
+  --text-primary: #e0e0e0;
+  --text-secondary: #a0a0a0;
+  --border-subtle: #333333;
+  --shadow-glow: 0 10px 30px rgba(0, 0, 0, 0.8);
+}
+
+/* Reset & Basics */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  background-color: var(--bg-deep);
+  color: var(--text-primary);
+  line-height: 1.8;
+}
+
+/* === TYPOGRAPHY === */
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+}
+
+h1 {
+  font-size: 3.5rem;
+  background: linear-gradient(to right, #fff, var(--accent-gold));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 0.5rem;
+}
+
+h2 {
+  font-size: 2.2rem;
+  color: var(--accent-gold);
+  border-bottom: 1px solid var(--border-subtle);
+  padding-bottom: 10px;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+/* === LAYOUT CONTAINERS === */
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto; /* Centers the main block on the screen */
+  padding: 0 2rem;
+}
+
+/* === THE FIX: FLEXBOX CENTERING === */
+section {
+  display: flex;           /* Turns on Flexbox */
+  flex-direction: column;  /* Stacks Header above Content */
+  align-items: center;     /* FORCES everything to the Center Middle */
+  margin-bottom: 6rem;
+  width: 100%;
+}
+
+/* === HEADER (HERO) === */
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 6rem 1rem 4rem;
+  background: radial-gradient(circle at center, #1a1a1a 0%, #0a0a0a 100%);
+  border-bottom: 1px solid var(--border-subtle);
+  margin-bottom: 4rem;
+  text-align: center;
+}
+
+.hero p {
+  color: var(--text-secondary);
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+/* === ABOUT === */
+.about-section p {
+  max-width: 700px;
+  text-align: center; /* Ensures text lines are centered */
+  color: var(--text-secondary);
+  font-size: 1.15rem;
+}
+
+/* === DESTINATIONS CARD GRID === */
+.cards-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2.5rem;
+  text-align: left; /* Keeps text INSIDE cards left-aligned for readability */
+}
+
+.card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 4px;
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-glow);
+  border-color: var(--accent-gold);
+}
+
+.card-img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  filter: brightness(0.8);
+  transition: filter 0.4s;
+}
+
+.card:hover .card-img {
+  filter: brightness(1);
+}
+
+.card-content {
+  padding: 2rem;
+}
+
+.card h3 {
+  font-size: 1.8rem;
+  color: white;
+  margin-bottom: 0.5rem;
+}
+
+.location {
+  font-family: 'Lato', sans-serif;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--accent-gold);
+  display: block;
+  margin-bottom: 1.5rem;
+}
+
+.card p strong {
+  color: white;
+}
+
+.reason {
+  margin-top: 1.5rem;
+  font-style: italic;
+  color: var(--text-secondary);
+  border-left: 2px solid var(--accent-gold);
+  padding-left: 1rem;
+}
+
+/* === GOALS SECTION === */
+/* Since the section has 'align-items: center', the UL will be centered */
+.goals-list {
+  list-style: none;
+  width: 100%;
+  max-width: 800px;
+  text-align: left; /* Keep the bullet points readable */
+}
+
+.goals-list li {
+  background-color: var(--bg-card);
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  border-left: 3px solid var(--border-subtle);
+  transition: border-color 0.3s;
+  font-size: 1.1rem;
+}
+
+.goals-list li:hover {
+  border-left: 3px solid var(--accent-gold);
+  background-color: #1f1f1f;
+}
+
+/* === FOOTER === */
+footer {
+  text-align: center;
+  padding: 3rem;
+  border-top: 1px solid var(--border-subtle);
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin-top: auto;
+}
